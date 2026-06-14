@@ -1,4 +1,5 @@
 # 第一阶段：构建项目
+
 FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
 COPY . .

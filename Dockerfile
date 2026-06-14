@@ -2,8 +2,11 @@
 FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
 
-# 复制所有文件
-COPY . .
+# 复制 Maven Wrapper 和项目文件
+COPY .mvn .mvn
+COPY mvnw .
+COPY pom.xml .
+COPY src src
 
 # 给 mvnw 执行权限
 RUN chmod +x ./mvnw

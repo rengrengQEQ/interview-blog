@@ -23,7 +23,6 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/home", "/login", "/register", "/post/**").permitAll()
-                        .requestMatchers("/publish", "/edit/**", "/api/posts/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
